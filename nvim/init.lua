@@ -234,6 +234,10 @@ require('lazy').setup({
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
 
+-- Custom scripts
+require 'custom.configs.settings'
+require 'custom.configs.keybindings'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -251,7 +255,6 @@ vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
-vim.o.shiftwidth = 4
 
 -- Save undo history
 vim.o.undofile = true

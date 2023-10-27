@@ -5,6 +5,7 @@ return {
 	sources = {
 		null_ls.builtins.formatting.gofumpt,
 		null_ls.builtins.formatting.goimports_reviser,
+		null_ls.builtins.formatting.prettierd,
 	},
 	on_attatch = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
