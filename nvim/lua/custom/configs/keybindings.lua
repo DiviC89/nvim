@@ -1,7 +1,0 @@
-vim.keymap.set('n', '<leader>fm', '<cmd>lua vim.lsp.buf.format()<CR>')
-vim.keymap.set('n', '<leader>pf', '<cmd>Exp<CR>')
-vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<leader>bp', '<cmd>bprev<CR>')
-vim.keymap.set('n', '<leader>ws', '<cmd>split<CR>')
-vim.keymap.set('n', '<leader>wx', '<cmd>close<CR>')
-vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>')
