@@ -8,8 +8,7 @@ local function get_jdtls()
 	-- Obtain the path to the jar which runs the language server
 	local launcher = vim.fn.glob(jdtls_path .. "/plugins/org.eclipse.equinox.launcher_*.jar")
 	-- Declare white operating system we are using, windows use win, macos use mac
-	-- FIX: This variable should be dynamic no?
-	local SYSTEM = "linux"
+	local SYSTEM = "win"
 	-- Obtain the path to configuration files for your specific operating system
 	local config = jdtls_path .. "/config_" .. SYSTEM
 	-- Obtain the path to the Lomboc jar
@@ -26,7 +25,7 @@ local function get_bundles()
 	local java_debug_path = java_debug:get_install_path()
 
 	local bundles = {
-		vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar", 1),
+		vim.fn.glob(java_debug_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar", true),
 	}
 
 	-- Find the Java Test package in the Mason Registry
@@ -34,16 +33,13 @@ local function get_bundles()
 	-- Obtain the full path to the directory where Mason has downloaded the Java Test binaries
 	local java_test_path = java_test:get_install_path()
 	-- Add all of the Jars for running tests in debug mode to the bundles list
-	vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar", 1), "\n"))
+	vim.list_extend(bundles, vim.split(vim.fn.glob(java_test_path .. "/extension/server/*.jar", true), "\n"))
 
 	return bundles
 end
 
 local function get_workspace()
-	-- Get the home directory of your operating system
-	local home = os.getenv("HOME")
-	-- Declare a directory where you would like to store project information
-	local workspace_path = home .. "/code/workspace/"
+	local workspace_path = "C:\\Users\\c1904638\\code\\workspace\\"
 	-- Determine the project name
 	local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 	-- Create the workspace directory by concatenating the designated workspace path and the project name
@@ -188,8 +184,8 @@ local function setup_jdtls()
 				enabled = true,
 				-- Use the Google Style guide for code formattingh
 				settings = {
-					url = vim.fn.stdpath("config") .. "/lang_servers/intellij-java-google-style.xml",
-					profile = "GoogleStyle",
+					url = "C:\\dev\\codestyle-settings.xml",
+					profile = "ArkinetStyle",
 				},
 			},
 			-- Enable downloading archives from eclipse automatically

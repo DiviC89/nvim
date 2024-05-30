@@ -1,5 +1,7 @@
 require("config.keymaps")
 require("config.options")
+require("config.autocmds")
+require("config.jdtls")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -9,9 +11,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"tpope/vim-fugitive",
 	"tpope/vim-rhubarb",
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+	"tpope/vim-sleuth",
 	{ import = "plugins" },
 }, {
 	ui = {

@@ -25,6 +25,7 @@ return {
 		end,
 		formatters_by_ft = {
 			go = { "gopls" },
+			java = { "jdtls" },
 			javascript = { "biome" },
 			javascriptreact = { "biome" },
 			lua = { "stylua" },
