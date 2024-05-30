@@ -24,10 +24,12 @@ return {
 			}
 		end,
 		formatters_by_ft = {
-			lua = { "stylua" },
 			go = { "gopls" },
-			-- python = { "isort", "black" },
-			-- javascript = { { "prettierd", "prettier" } },
+			javascript = { "biome" },
+			javascriptreact = { "biome" },
+			lua = { "stylua" },
+			typescript = { "biome" },
+			typescriptreact = { "biome" },
 		},
 	},
 }

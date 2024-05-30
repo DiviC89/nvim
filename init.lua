@@ -9,6 +9,8 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	"tpope/vim-fugitive",
+	"tpope/vim-rhubarb",
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	{ import = "plugins" },
 }, {
